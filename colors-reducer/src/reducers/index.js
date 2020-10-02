@@ -7,17 +7,21 @@ export const colorsReducer = (state = initialState, action) => {
     case "CHANGE_RED":
       return {
         ...state,
-        color: "red",
+        color: "white",
+        background: "red",
       };
     case "CHANGE_BLUE":
       return {
         ...state,
         color: "blue",
+        background: "orange",
       };
     case "CHANGE_HOTPINK":
       return {
         ...state,
         color: "hotpink",
+        background: "gray",
+        fontStyle: "italic",
       };
     default:
       return state;
