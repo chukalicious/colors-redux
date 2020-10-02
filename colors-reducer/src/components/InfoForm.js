@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { getForm } from "../actions/personalActions";
 
-const InfoForm = () => {
+const InfoForm = (props) => {
+  console.log("props inside the InfoForm function: ", props);
+
   const [formState, setFormState] = useState({});
   console.log(formState);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
@@ -33,10 +36,15 @@ const InfoForm = () => {
           />
         </label>
         <br />
-        <button>Send</button>
       </form>
+      <button>Send</button>
     </div>
   );
 };
 
-export default InfoForm;
+const mapStateToProps = (state) => {
+  console.log("mstp: => (InfoForm component): ", state);
+  return { personalInfo: {} };
+};
+
+export default connect(mapStateToProps, { getForm })(InfoForm);

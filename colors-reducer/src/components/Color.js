@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { colorRed, colorBlue, colorHotpink } from "../actions";
 
 const Color = (props) => {
-  console.log("props form the Color component: ", props);
   return (
     <div>
       <div className="color-div">
@@ -24,7 +23,6 @@ const Color = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("mstp: => (from the Buttons component): ", state);
   return {
     color: state.color,
     background: state.background,

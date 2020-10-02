@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { colorRed, colorBlue, colorHotpink } from "../actions";
 
 const Buttons = (props) => {
-  console.log("props from button component: ", props);
   return (
     <div>
       <button onClick={() => props.colorRed()}>Red</button>
@@ -14,7 +13,6 @@ const Buttons = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("mstp: => (Color component): ", state);
   return {
     color: state.color,
   };

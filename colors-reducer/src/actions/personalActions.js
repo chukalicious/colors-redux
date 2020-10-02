@@ -1,24 +1,8 @@
-const NAME = "NAME";
-const AGE = "AGE";
-const LOCATION = "LOCATION";
+const GET_FORM = "GET_FORM";
 
-export const setName = (name) => {
+export const getForm = (form) => {
   return {
-    type: NAME,
-    payload: name,
-  };
-};
-
-export const setAge = (age) => {
-  return {
-    type: AGE,
-    payload: age,
-  };
-};
-
-export const setLocation = (location) => {
-  return {
-    type: LOCATION,
-    payload: location,
+    type: GET_FORM,
+    personalInfo: form,
   };
 };
