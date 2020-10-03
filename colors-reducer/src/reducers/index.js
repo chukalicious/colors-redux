@@ -1,6 +1,6 @@
 const initialState = {
   color: "black",
-  personalInfo: {},
+  personalInfo: { name: "", age: "", location: "" },
 };
 
 export const colorsReducer = (state = initialState, action) => {
@@ -27,7 +27,12 @@ export const colorsReducer = (state = initialState, action) => {
     case "GET_FORM":
       return {
         ...state,
-        personalInfo: action.payload,
+        personalInfo: {
+          ...state.personalInfo,
+          name: action.payload.name,
+          age: action.payload.age,
+          location: action.payload.location,
+        },
       };
     default:
       return state;
